@@ -1,0 +1,26 @@
+@property --num {
+  syntax: "<integer>";
+  initial-value: 1984; /*change number here*/
+  inherits: false;
+}
+
+#rollingnumbers {
+  animation: counter 4s; /*change time here*/
+  counter-reset: num var(--num);
+  font: 800 40px system-ui;
+  padding: 2rem;
+}
+
+#rollingnumbers::after {
+  content: counter(num);
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 1984; /*change number here*/
+  }
+}
+
